@@ -2,6 +2,9 @@
 
 int	main(void)
 {
-	printf("programs words\n");
+	char	*str;
+	size_t	number;
+
+	str = ft_malloc(4);
 	return (0);
 }
