@@ -41,3 +41,8 @@ Returns number of bytes in a page. It is the system page size, thus may not be t
 Get the limits on the consumption of the system resources. A resource limit has a soft and hard limits. Reaching soft limit leads to process to receive a signal (still can continue to execute), while reaching hard limit terminates it.
 
 ### libpthread (POSIX threads library)
+
+## Compilation
+
+On linux set the value:
+`export LD_LIBRARY_PATH=$PWD`

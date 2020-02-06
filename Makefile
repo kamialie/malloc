@@ -12,6 +12,8 @@ SRC_DIR = src
 
 OBJ_DIR = obj
 
+FLAGS = -g3 -Wall -Wextra -fPIC -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -19,7 +21,7 @@ $(NAME): $(OBJ)
 
 # add -Wall -Wextra -Werror later
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c include/malloc.h $(OBJ_DIR)
-	gcc -fPIC -c -I include -o $@ $<
+	gcc $(FLAGS) -fPIC -c -I include -o $@ $<
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -34,4 +36,4 @@ fclean: clean
 re: fclean all
 
 test:
-	gcc -I include libft_malloc_x86_64_Darwin.so main.c
+	gcc -I include $(NAME) main.c
