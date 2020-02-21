@@ -21,7 +21,7 @@ $(NAME): $(OBJ)
 
 # add -Wall -Wextra -Werror later
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c include/malloc.h $(OBJ_DIR)
-	gcc $(FLAGS) -fPIC -c -I include -o $@ $<
+	gcc $(FLAGS) -g -fPIC -c -I include -o $@ $<
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -35,5 +35,8 @@ fclean: clean
 
 re: fclean all
 
+depend:
+	makedepend $(SRC_DIR)/ft_malloc.c
+
 test:
-	gcc -I include $(NAME) main.c
+	gcc -g -I include $(NAME) main.c

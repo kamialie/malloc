@@ -28,7 +28,7 @@ Removes the mappings for the specified address range, causing futher references 
 
 **#include <unistd.h>**
 
-`getpagesize(void)`
+`int getpagesize(void)`
 
 Returns number of bytes in a page. It is the system page size, thus may not be the same as the underlying hardware page size
 
@@ -36,7 +36,7 @@ Returns number of bytes in a page. It is the system page size, thus may not be t
 
 **#include <sys/resource.h>**
 
-`getrlimit(int resource, struct rlimit *rlp)`
+`int getrlimit(int resource, struct rlimit *rlp)`
 
 Get the limits on the consumption of the system resources. A resource limit has a soft and hard limits. Reaching soft limit leads to process to receive a signal (still can continue to execute), while reaching hard limit terminates it.
 
@@ -46,3 +46,7 @@ Get the limits on the consumption of the system resources. A resource limit has 
 
 On linux set the value:
 `export LD_LIBRARY_PATH=$PWD`
+
+## Helpful functions / commands
+
++ `void malloc_stats(void)` - prints stats on allocated memory used

@@ -1,0 +1,64 @@
+#include <malloc.h>
+
+int	main(void) {
+	char *str = malloc(24);
+	str[0] = 'a';
+	str[1] = 'b';
+	str[2] = 'c';
+	str[3] = 'd';
+	str[4] = 'e';
+	str[5] = 'f';
+	str[6] = 'g';
+	str[8] = 'h';
+	str[7] = 'i';
+	str[9] = 'j';
+	str[10] = 'k';
+	str[11] = 'l';
+	str[12] = 'm';
+	str[13] = 'n';
+	str[14] = 'o';
+	str[15] = 'p';
+	str[16] = 'q';
+	str[17] = 'r';
+	str[18] = 's';
+	str[19] = 't';
+	str[20] = 'u';
+	str[21] = 'v';
+	str[22] = 'w';
+	str[23] = 'x';
+	//str[24] = 'y';
+	//str[25] = '\0';
+	char *tmp = malloc(1);
+	/*tmp[0] = 'a';
+	tmp[1] = 'b';
+	tmp[2] = 'c';
+	tmp[3] = 'd';
+	tmp[4] = 'e';
+	tmp[5] = 'f';
+	tmp[6] = 'g';
+	tmp[7] = 'h';
+	tmp[8] = 'i';
+	tmp[9] = 'j';
+	tmp[10] = 'k';
+	tmp[11] = 'l';
+	tmp[12] = 'm';
+	tmp[13] = 'n';
+	tmp[14] = 'o';
+	tmp[15] = 'p';
+	tmp[16] = 'q';
+	tmp[17] = 'r';
+	tmp[18] = 's';
+	tmp[19] = 't';
+	tmp[20] = 'u';
+	tmp[21] = 'v';
+	tmp[22] = 'w';
+	tmp[23] = 'x';
+	str[24] = 'y';
+	str[25] = '\0';*/
+	//tmp[24] = '\0';
+	//str[33] = '\0';
+	//printf("%p\n%p\n", &(str[33]), tmp);
+	printf("address - %p, usable size - %lu, %s\n", str, malloc_usable_size(str), str);
+	printf("address - %p, usable size - %lu, %s\n", tmp, malloc_usable_size(tmp), tmp);
+	return (0);
+}
