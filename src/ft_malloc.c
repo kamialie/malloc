@@ -1,6 +1,17 @@
 #include "malloc.h"
 
-t_small_page	*pages = NULL;
+/*
+** arguments from first to last:
+** let kernel decide the location
+** size of allocated region (should be multiple of page size)
+** read and write rights
+** owned by process reguesting it ?
+** no file descriptor
+** no offset (might be needed for reallocating big regions)
+*/
+//allocation = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0);
+
+/*t_small_page	*pages = NULL;
 
 void	create_page(void)
 {
@@ -11,20 +22,29 @@ void	create_page(void)
 	page->n_blocks = 4096 / 16;
 	pages = page;
 }
-
+*/
 /*void	find_space(t_small_page *page)
 {
 
 }*/
 
+//t_box	*head = NULL;
+
+//t_allocs	*allocs = NULL;
+
+//void	*get_tiny_alloc(t_box	
 void	*ft_malloc(size_t size)
 {
 	void	*allocation;
 
 	printf("MALLOC!\n");
-	allocation = mmap(NULL, size, PROT_NONE, MAP_PRIVATE | MAP_ANON, -1, 0);
+
+	/*if (size < 128)
+		allocation = get_tiny_allocation(allocs);
+
 	if (page == NULL)
 		create_page();
-	printf
+	printf*/
+	printf("size - %lu\n", sizeof(int *));
 	return (allocation);
 }

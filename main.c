@@ -21,14 +21,14 @@ int	main(void) {
 		str1[i] = 'a' + i;
 	}
 	str1[15] = '\0';
-	printf("size - %lu\n", malloc_usable_size(str1));
+	//printf("size - %lu\n", malloc_usable_size(str1));
 	printf("contents - %s\n", str1);
 	str2 = malloc(16);
 	for (int i = 0; i < 25; i++) {
 		str2[i] = 'a' + i;
 	}
 	str1[15] = '\0';
-	printf("size - %lu\n", malloc_usable_size(str2));
+	//printf("size - %lu\n", malloc_usable_size(str2));
 	printf("contents - %s\n", str2);
 	printf("1 - %p 2 - %p\n", &str1[27], str2);
 	str1[0] = 'a';
